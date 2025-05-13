@@ -1,29 +1,65 @@
 ---
-title: 歡迎來到我的部落格
-description: 這是一個使用 Nuxt Content 建立的部落格文章，介紹了 Nuxt Content 的主要功能和優點。
-date: 2024-03-21
-author: zenzen
+title: Home
+navigation: false
 ---
 
-# 歡迎來到我的部落格
-
-這是一個使用 Nuxt Content 建立的部落格文章。
-
-## 為什麼選擇 Nuxt Content？
-
-Nuxt Content 提供了以下優點：
-
-- 使用 Markdown 撰寫文章
-- 支援程式碼高亮
-- 自動生成目錄
-- 支援 YAML front matter
-- 強大的查詢 API
-
-## 開始使用
-
-你可以在 `content` 目錄下創建更多的 `.md` 文件來添加新的文章。
-
+::hero
+---
+announcement:
+  title: 'Build with Nuxt.js Docs'
+  icon: '🎉'
+  to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/releases/latest
+actions:
+  - name: Get Started
+    to: /intro
+mobileRight: 'top'
 ---
 
-作者: zenzen
-日期: 2024-03-21
+#title
+Welcome to my blog
+
+#description
+前端開發，專注於 Vue.js，期望透過簡易的話語紀錄及描述知識。
+::
+
+::card-group
+  ::card
+  ---
+  title: Front-end
+  icon: 🖥
+  to: /vue/intro
+  target: _self
+  ---
+  Vue、Nuxt、React、Vite、Webpack、TypeScript、JavaScript、Three.js、StorkBook、React-three-fiber
+  ::
+
+  ::card
+  ---
+  title: Back-end
+  icon: 📺
+  to: /vue/intro
+  target: _self
+  ---
+  Docker、Nginx、HTTP、Jenkins、Shell、AWS、Python
+  ::
+
+  ::card
+  ---
+  title: AI-end
+  icon: 🤖
+  to: /vue/intro
+  target: _self
+  ---
+  Influence、Evaluation、RAG、Vision、Voice
+  ::
+
+  ::card
+  ---
+  title: Week-end
+  icon: 🍺
+  to: /vue/intro
+  target: _self
+  ---
+  Coding、Reading、Learning、Trying、Sleeping
+  ::
+::
