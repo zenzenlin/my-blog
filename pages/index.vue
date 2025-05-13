@@ -1,28 +1,24 @@
 <template>
-  <div class="container">
-    <h1>我的部落格</h1>
-    <Suspense>
-      <ContentRenderer :value="data" />
-    </Suspense>
+  <div class="px-4 py-6 md:px-8" :class="[config.main.padded && 'container']">
+    <ContentRenderer
+      :key="page._id"
+      :value="page"
+      :data="(appConfig.shadcnDocs as any)?.data"
+    />
   </div>
 </template>
 
-<script setup>
-const { data } = await useAsyncData(() =>
-  queryCollection("content").path("/").first()
-);
+<script setup lang="ts">
+const { page } = useContent();
+const config = useConfig();
+const appConfig = useAppConfig();
+
+useSeoMeta({
+  title: `${page.value?.title ?? "404"} - ${config.value.site.name}`,
+  ogTitle: page.value?.title,
+  description: page.value?.description,
+  ogDescription: page.value?.description,
+  ogImage: config.value.site?.ogImage,
+  twitterCard: "summary_large_image",
+});
 </script>
-
-<style scoped>
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-h1 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 2rem;
-}
-</style>

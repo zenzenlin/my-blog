@@ -1,128 +1,95 @@
 <template>
-  <div class="container">
-    <div v-if="pending" class="loading">載入中...</div>
-    <div v-else-if="error" class="error">
-      <h1>找不到文章</h1>
-      <p>抱歉，您要查看的文章不存在。</p>
-      <NuxtLink to="/" class="back-link">返回首頁</NuxtLink>
-    </div>
-    <article v-else class="article">
-      <h1>{{ page.title }}</h1>
-      <div class="meta">
-        <span class="date">{{ formatDate(page.date) }}</span>
-        <span class="author" v-if="page.author">作者：{{ page.author }}</span>
-      </div>
-      <ContentRenderer :value="page" />
-    </article>
+  <div
+    v-if="!page?.body"
+    class="flex h-[calc(100vh-3.5rem)] items-center justify-center"
+  >
+    <h3 class="scroll-m-20 border-r px-4 py-3 text-2xl font-semibold">404</h3>
+    <span class="scroll-m-20 px-4"> This page could not be found. </span>
   </div>
+
+  <template v-else>
+    <div
+      v-if="page?.fullpage"
+      class="px-4 py-6 md:px-8"
+      :class="[config.main.padded && 'container']"
+    >
+      <ContentRenderer
+        :key="page._id"
+        :value="page"
+        :data="(appConfig.shadcnDocs as any)?.data"
+      />
+    </div>
+    <main
+      v-else
+      class="relative py-6"
+      :class="[
+        config.toc.enable &&
+          (page.toc ?? true) &&
+          'lg:grid lg:grid-cols-[1fr_220px] lg:gap-14 lg:py-8',
+      ]"
+    >
+      <div class="mx-auto w-full min-w-0">
+        <LayoutBreadcrumb
+          v-if="
+            page?.body && config.main.breadCrumb && (page.breadcrumb ?? true)
+          "
+          class="mb-4"
+        />
+        <LayoutTitle
+          v-if="config.main.showTitle"
+          :title="page?.title"
+          :description="page?.description"
+          :badges="page?.badges"
+          :authors="page?.authors"
+        />
+
+        <Alert
+          v-if="page?.body?.children?.length === 0"
+          title="Empty Page"
+          icon="lucide:circle-x"
+        >
+          Start writing in
+          <ProseCodeInline>content/{{ page?._file }}</ProseCodeInline> to see
+          this page taking shape.
+        </Alert>
+
+        <ContentRenderer
+          v-else
+          :key="page._id"
+          :value="page"
+          :data="(appConfig.shadcnDocs as any)?.data"
+          class="docs-content"
+        />
+
+        <LayoutDocsFooter />
+      </div>
+      <div
+        v-if="config.toc.enable && (page.toc ?? true)"
+        class="hidden text-sm lg:block"
+      >
+        <div class="sticky top-[90px] h-[calc(100vh-3.5rem)] overflow-hidden">
+          <LayoutToc :is-small="false" />
+        </div>
+      </div>
+    </main>
+  </template>
 </template>
 
-<script setup>
-const { path } = useRoute();
-const {
-  data: page,
-  pending,
-  error,
-} = await useAsyncData(`content-${path}`, () => queryContent(path).findOne());
+<script setup lang="ts">
+const { page } = useContent();
+const config = useConfig();
+const appConfig = useAppConfig();
 
-function formatDate(date) {
-  return new Date(date).toLocaleDateString("zh-TW", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
+useSeoMeta({
+  title: `${page.value?.title ?? "404"} - ${config.value.site.name}`,
+  ogTitle: page.value?.title,
+  description: page.value?.description,
+  ogDescription: page.value?.description,
+  twitterCard: "summary_large_image",
+});
+
+defineOgImageComponent(config.value.site.ogImageComponent, {
+  title: page.value?.title,
+  description: page.value?.description,
+});
 </script>
-
-<style scoped>
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.loading {
-  text-align: center;
-  padding: 2rem;
-  font-size: 1.2rem;
-  color: #666;
-}
-
-.error {
-  text-align: center;
-  padding: 2rem;
-}
-
-.error h1 {
-  color: #e74c3c;
-  margin-bottom: 1rem;
-}
-
-.back-link {
-  display: inline-block;
-  margin-top: 1rem;
-  color: #3498db;
-  text-decoration: none;
-}
-
-.back-link:hover {
-  text-decoration: underline;
-}
-
-.article {
-  background: #fff;
-  border-radius: 8px;
-  padding: 2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-  font-size: 2.5rem;
-  color: #2c3e50;
-  margin-bottom: 1rem;
-}
-
-.meta {
-  color: #666;
-  margin-bottom: 2rem;
-  display: flex;
-  gap: 1rem;
-}
-
-:deep(h2) {
-  font-size: 1.8rem;
-  color: #2c3e50;
-  margin: 2rem 0 1rem;
-}
-
-:deep(p) {
-  line-height: 1.8;
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-:deep(ul),
-:deep(ol) {
-  margin: 1rem 0;
-  padding-left: 2rem;
-}
-
-:deep(li) {
-  margin-bottom: 0.5rem;
-}
-
-:deep(code) {
-  background: #f5f5f5;
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  font-family: monospace;
-}
-
-:deep(pre) {
-  background: #f5f5f5;
-  padding: 1rem;
-  border-radius: 8px;
-  overflow-x: auto;
-  margin: 1rem 0;
-}
-</style>

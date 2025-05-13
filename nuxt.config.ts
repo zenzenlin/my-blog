@@ -1,8 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
-  modules: ["@nuxt/content"],
+  extends: ["shadcn-docs-nuxt"],
+  compatibilityDate: "2024-07-06",
+
+  modules: ["@nuxt/content", "@nuxt/eslint", "@nuxt/icon", "@nuxt/scripts"],
+  components: {
+    global: true,
+    dirs: ["~/components"],
+  },
   nitro: {
     prerender: {
       crawlLinks: true,
