@@ -15,5 +15,7 @@ export default withNuxt({
         math: "always",
       },
     ],
+    "vue/no-multiple-template-root": "off", // 允許多根元素
+    "@typescript-eslint/no-explicit-any": "off", // 允許使用 any
   },
 });

@@ -11,7 +11,7 @@ export default defineAppConfig({
       radius: 0.5,
     },
     header: {
-      title: "QQQ",
+      title: "Mike's Blog",
       showTitle: true,
       darkModeToggle: true,
       logo: {
@@ -21,7 +21,7 @@ export default defineAppConfig({
       nav: [],
       links: [
         {
-          icon: "lucide:github",
+          icon: "octicon:mark-github",
           to: "https://github.com/zenzenlin/my-blog",
           target: "_blank",
         },
@@ -30,6 +30,8 @@ export default defineAppConfig({
     aside: {
       useLevel: true,
       collapse: false,
+      collapseLevel: 1,
+      folderStyle: "default",
     },
     main: {
       breadCrumb: true,

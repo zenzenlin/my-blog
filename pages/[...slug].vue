@@ -88,7 +88,7 @@ useSeoMeta({
   twitterCard: "summary_large_image",
 });
 
-defineOgImageComponent(config.value.site.ogImageComponent, {
+defineOgImageComponent((config.value.site as unknown as any).ogImageComponent, {
   title: page.value?.title,
   description: page.value?.description,
 });

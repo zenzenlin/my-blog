@@ -18,7 +18,7 @@ useSeoMeta({
   ogTitle: page.value?.title,
   description: page.value?.description,
   ogDescription: page.value?.description,
-  ogImage: config.value.site?.ogImage,
+  ogImage: (config.value.site as unknown as any).ogImage,
   twitterCard: "summary_large_image",
 });
 </script>
