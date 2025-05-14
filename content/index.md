@@ -26,40 +26,40 @@ Welcome to my blog
   ::card
   ---
   title: Front-end
-  icon: 🖥
+  icon: vscode-icons:file-type-vue
   to: /vue/intro
   target: _self
   ---
-  Vue、Nuxt、React、Vite、Webpack、TypeScript、JavaScript、Three.js、StorkBook、React-three-fiber
+  Vue、Nuxt、Vite、JavaScript、TypeScript、MasterCSS
   ::
 
   ::card
   ---
   title: Back-end
-  icon: 📺
+  icon: vscode-icons:file-type-docker
   to: /vue/intro
   target: _self
   ---
-  Docker、Nginx、HTTP、Jenkins、Shell、AWS、Python
+  Docker、Nginx、HTTP、Jenkins、Python
   ::
 
   ::card
-  ---
+  <!-- ---
   title: AI-end
   icon: 🤖
   to: /vue/intro
   target: _self
   ---
-  Influence、Evaluation、RAG、Vision、Voice
+  Influence、Evaluation、RAG、Vision、Voice -->
   ::
 
   ::card
   ---
-  title: Week-end
+  title: Others
   icon: 🍺
   to: /vue/intro
   target: _self
   ---
-  Coding、Reading、Learning、Trying、Sleeping
+  Reading、Learning、Trying
   ::
 ::
