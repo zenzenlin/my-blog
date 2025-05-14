@@ -1,0 +1,4 @@
+title: Docker
+navigation.icon: vscode-icons:file-type-docker
+navigation.redirect: /back-end/docker/intro
+collapse: false

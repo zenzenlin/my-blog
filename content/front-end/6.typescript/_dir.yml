@@ -1,0 +1,4 @@
+title: TypeScript
+navigation.icon: vscode-icons:file-type-typescript
+navigation.redirect: /front-end/typescript/intro
+collapse: true

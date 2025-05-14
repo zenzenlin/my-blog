@@ -27,7 +27,7 @@ Welcome to my blog
   ---
   title: Front-end
   icon: vscode-icons:file-type-vue
-  to: /vue/intro
+  to: /front-end/vue/intro
   target: _self
   ---
   Vue、Nuxt、Vite、JavaScript、TypeScript、MasterCSS
@@ -37,7 +37,7 @@ Welcome to my blog
   ---
   title: Back-end
   icon: vscode-icons:file-type-docker
-  to: /vue/intro
+  to: /back-end/docker/intro
   target: _self
   ---
   Docker、Nginx、HTTP、Jenkins、Python
@@ -57,7 +57,7 @@ Welcome to my blog
   ---
   title: Others
   icon: 🍺
-  to: /vue/intro
+  to: /others/reading/intro
   target: _self
   ---
   Reading、Learning、Trying

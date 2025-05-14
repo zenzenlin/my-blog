@@ -1,0 +1,4 @@
+# title: Vue
+navigation.icon: vscode-icons:file-type-aspx
+navigation.redirect: /front-end/vue/intro
+collapse: false

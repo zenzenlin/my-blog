@@ -1,0 +1,4 @@
+title: JavaScript
+navigation.icon: vscode-icons:file-type-js-official
+navigation.redirect: /front-end/javascript/intro
+collapse: true

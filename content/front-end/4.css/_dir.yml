@@ -1,0 +1,4 @@
+title: CSS
+navigation.icon: vscode-icons:file-type-css
+navigation.redirect: /front-end/css/intro
+collapse: true

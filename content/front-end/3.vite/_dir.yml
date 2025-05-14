@@ -1,0 +1,4 @@
+title: Vite
+navigation.icon: vscode-icons:file-type-vite
+navigation.redirect: /front-end/vite/intro
+collapse: true

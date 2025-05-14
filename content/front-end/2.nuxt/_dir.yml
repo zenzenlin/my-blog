@@ -1,4 +1,4 @@
 title: Nuxt
 navigation.icon: vscode-icons:file-type-nuxt
-navigation.redirect: /nuxt/intro
+navigation.redirect: /front-end/nuxt/intro
 collapse: true
