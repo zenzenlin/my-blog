@@ -1,0 +1,4 @@
+title: AI
+navigation.icon: vscode-icons:file-type-webpack
+navigation.redirect: /ai/intro
+collapse: false
