@@ -3,6 +3,7 @@ title: 使用 Nuxt Content 建置部落格
 description: 來記錄一下建置 Blog 時遇到的問題
 date: 2025-05-05
 read: '1'
+icon: noto:construction
 authors:
   - name: Mike Lin
     username: zenzenlin

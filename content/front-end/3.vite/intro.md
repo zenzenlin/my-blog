@@ -3,6 +3,7 @@ title: Intro
 description: 介紹 Vite
 date: 2025-05-20
 read: '1'
+icon: noto:construction
 authors:
   - name: Mike Lin
     username: zenzenlin
