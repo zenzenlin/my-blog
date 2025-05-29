@@ -21,6 +21,7 @@ export default defineNuxtConfig({
         lang: "zh-Hant-TW",
       },
       title: "zenzen 的部落格網站",
+      link: [{ rel: "icon", type: "image/x-icon", href: "./favicon.ico" }],
     },
     baseURL: process.env.NODE_ENV === "production" ? "/my-blog/" : "/",
   },
