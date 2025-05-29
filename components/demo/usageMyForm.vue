@@ -18,5 +18,6 @@ const definedModelForm = ref({ name: "John", age: 28 });
   <MyForm
     v-model:name="definedModelForm.name"
     v-model:age="definedModelForm.age"
+    use-define-model
   />
 </template>

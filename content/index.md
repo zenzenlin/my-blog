@@ -44,13 +44,13 @@ Welcome to my blog
   ::
 
   ::card
-  <!-- ---
-  title: AI-end
-  icon: 🤖
-  to: /vue/intro
+  ---
+  title: AI
+  icon: logos:openai-icon
+  to: /ai/intro
   target: _self
   ---
-  Influence、Evaluation、RAG、Vision、Voice -->
+  Influence、Evaluation、RAG、Vision、Voice
   ::
 
   ::card

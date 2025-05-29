@@ -17,6 +17,7 @@ const modelAge = defineModel<number>("age");
 
 <template>
   <div class="p-4 border rounded space-y-4">
+    <p>is useDefineModel: {{ props.useDefineModel }}</p>
     <label class="block">
       姓名：
       <input
