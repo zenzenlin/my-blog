@@ -4,6 +4,8 @@ export default defineAppConfig({
       name: "Mike's blog",
       description:
         "前端開發，專注於 Vue.js，期望透過簡易的話語紀錄及描述知識。",
+      ogImage: "/logo.svg",
+      ogImageColor: "light",
     },
     theme: {
       customizable: true,

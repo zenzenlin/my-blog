@@ -56,7 +56,7 @@ Welcome to my blog
   ::card
   ---
   title: Others
-  icon: 🍺
+  icon: fxemoji:fireworks
   to: /others/reading/intro
   target: _self
   ---
