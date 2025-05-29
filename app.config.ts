@@ -22,7 +22,7 @@ export default defineAppConfig({
       links: [
         {
           icon: "octicon:mark-github",
-          to: "https://github.com/zenzenlin/my-blog",
+          to: "https://github.com/zenzenlin",
           target: "_blank",
         },
       ],
