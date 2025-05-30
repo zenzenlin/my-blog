@@ -4,7 +4,14 @@ export default defineNuxtConfig({
   extends: ["shadcn-docs-nuxt"],
   compatibilityDate: "2024-07-06",
 
-  modules: ["@nuxt/content", "@nuxt/eslint", "@nuxt/icon", "@nuxt/scripts"],
+  modules: [
+    "@nuxt/content",
+    "@nuxt/eslint",
+    "@nuxt/icon",
+    "@nuxt/scripts",
+    "@nuxtjs/sitemap",
+    "@nuxtjs/robots",
+  ],
   components: {
     global: true,
     dirs: ["~/components"],
@@ -52,5 +59,19 @@ export default defineNuxtConfig({
       ],
     },
     baseURL: process.env.NODE_ENV === "production" ? "/my-blog/" : "/",
+  },
+  site: {
+    url: "https://zenzenlin.github.io/my-blog",
+    name: "Mike's Blog",
+    description:
+      "前端開發、Vue、Coding、自學、AI、資料分析探索，支援網頁設計與職涯轉職。",
+    image: "https://zenzenlin.github.io/my-blog/og-image.png",
+  },
+  robots: {
+    sitemap: "https://zenzenlin.github.io/sitemap.xml",
+  },
+  sitemap: {
+    xsl: false,
+    sources: ["/api/_sitemap-urls"],
   },
 });
