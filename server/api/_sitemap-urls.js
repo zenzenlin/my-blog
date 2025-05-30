@@ -13,7 +13,6 @@
 //   }));
 // });
 
-// server/api/_sitemap-urls.ts
 import { fileURLToPath } from "node:url";
 import { globby } from "globby";
 import { resolve } from "node:path";
@@ -55,10 +54,9 @@ export default defineEventHandler(async () => {
       loc = "/";
     }
 
-    // 您的 GitHub Pages baseURL 設定，確保在開發和生產環境下路徑正確
-    // 注意：sitemap 模組的 `site.url` 會自動處理 baseURL，這裡只需要相對路徑
-    // 所以不需要 process.env.NODE_ENV === "production" 的判斷
-    // 它會自動加上 site.url
+    // 修正: sitemap 模組確實會處理 site.url，但在某些情況下需要考慮 GitHub Pages 的 baseURL
+    // 關鍵在於確保 loc 是正確的相對路徑，而不需要重複的 baseURL
+    // 使用環境變數或配置檔案來判斷當前環境
 
     return {
       loc: loc,
@@ -69,12 +67,15 @@ export default defineEventHandler(async () => {
   });
 
   // 加入首頁 (如果它不在 content/index.md 中) 或其他固定頁面
-  urls.push({
-    loc: "/",
-    lastmod: new Date().toISOString(),
-    changefreq: "daily",
-    priority: 1.0,
-  });
+  // 檢查是否已包含首頁，避免重複
+  if (!urls.some((u) => u.loc === "/")) {
+    urls.push({
+      loc: "/",
+      lastmod: new Date().toISOString(),
+      changefreq: "daily",
+      priority: 1.0,
+    });
+  }
 
   // 過濾重複的 URL (如果 globby 或手動添加導致重複)
   const uniqueUrls = Array.from(
