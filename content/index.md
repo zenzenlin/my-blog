@@ -20,6 +20,8 @@ Welcome to my blog
 
 #description
 前端開發，專注於 Vue.js，期望透過簡易的話語紀錄及描述知識。
+<br/>
+用得上的東西你才去學，不要害怕自己的無知。
 ::
 
 ::card-group
