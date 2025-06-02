@@ -1,0 +1,4 @@
+title: Node.js
+navigation.icon: skill-icons:nodejs-light
+navigation.redirect: /front-end/nodejs/intro
+collapse: true
