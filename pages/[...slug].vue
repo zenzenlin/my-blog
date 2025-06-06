@@ -29,6 +29,12 @@
       ]"
     >
       <div class="mx-auto w-full min-w-0">
+        <!-- SEO 麵包屑 -->
+        <SEOBreadcrumb
+          v-if="breadcrumbs.length > 0"
+          :breadcrumbs="breadcrumbs"
+        />
+
         <LayoutBreadcrumb
           v-if="
             page?.body && config.main.breadCrumb && (page.breadcrumb ?? true)
@@ -80,13 +86,64 @@ const { page } = useContent();
 const config = useConfig();
 const appConfig = useAppConfig();
 
-useSeoMeta({
-  title: `${page.value?.title ?? "404"} - ${config.value.site.name}`,
-  ogTitle: page.value?.title,
-  description: page.value?.description,
-  ogDescription: page.value?.description,
-  twitterCard: "summary_large_image",
+// 生成麵包屑
+const breadcrumbs = computed(() => {
+  if (!page.value?._path) return [];
+
+  const pathSegments = page.value._path.split("/").filter(Boolean);
+  const crumbs = [];
+
+  for (let i = 0; i < pathSegments.length; i++) {
+    const segment = pathSegments[i];
+    const path = "/" + pathSegments.slice(0, i + 1).join("/");
+
+    // 將路徑段落轉換為中文標題
+    let title = segment;
+    const titleMap: Record<string, string> = {
+      "front-end": "前端技術",
+      ai: "AI 相關",
+      "back-end": "後端技術",
+      others: "其他",
+      pasocon: "資訊安全",
+      vue: "Vue.js",
+      javascript: "JavaScript",
+      typescript: "TypeScript",
+      css: "CSS",
+      nuxt: "Nuxt.js",
+      nodejs: "Node.js",
+      vite: "Vite",
+      docker: "Docker",
+      coding: "程式設計",
+      reading: "閱讀心得",
+    };
+
+    if (titleMap[segment]) {
+      title = titleMap[segment];
+    }
+
+    crumbs.push({
+      text: title,
+      to: i === pathSegments.length - 1 ? undefined : path,
+    });
+  }
+
+  return crumbs;
 });
+
+// SEO Meta 設定
+if (page.value) {
+  // 使用 composable 進行 SEO 設定
+  useArticleSEO(page.value);
+}
+
+// 404 頁面的 SEO
+if (!page.value?.body) {
+  useSeoMeta({
+    title: "404 - 頁面未找到 | Mike's Blog",
+    description: "抱歉，您要找的頁面不存在。",
+    robots: "noindex,nofollow",
+  });
+}
 
 defineOgImageComponent((config.value.site as unknown as any).ogImageComponent, {
   title: page.value?.title,

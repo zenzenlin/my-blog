@@ -1,0 +1,41 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景漸層 -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+
+  <!-- 裝飾性圓圈 -->
+  <circle cx="100" cy="100" r="60" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="1100" cy="530" r="80" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="200" cy="500" r="40" fill="rgba(255,255,255,0.08)"/>
+
+  <!-- 主標題 -->
+  <text x="600" y="280" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="68" font-weight="bold">
+    Mike's Blog
+  </text>
+
+  <!-- 副標題 -->
+  <text x="600" y="350" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="32">
+    前端技術分享部落格
+  </text>
+
+  <!-- 標籤 -->
+  <rect x="400" y="400" width="80" height="30" rx="15" fill="rgba(255,255,255,0.2)"/>
+  <text x="440" y="420" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16">Vue.js</text>
+
+  <rect x="500" y="400" width="120" height="30" rx="15" fill="rgba(255,255,255,0.2)"/>
+  <text x="560" y="420" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16">JavaScript</text>
+
+  <rect x="640" y="400" width="80" height="30" rx="15" fill="rgba(255,255,255,0.2)"/>
+  <text x="680" y="420" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16">Nuxt</text>
+
+  <!-- URL -->
+  <text x="600" y="520" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="Arial, sans-serif" font-size="24">
+    zenzenlin.github.io/my-blog
+  </text>
+</svg>

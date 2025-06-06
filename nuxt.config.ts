@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     "@nuxt/scripts",
     "@nuxtjs/sitemap",
     "@nuxtjs/robots",
+    "@nuxtjs/seo",
   ],
   components: {
     global: true,
@@ -19,8 +20,14 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ["/"], // 額外手動列出要預產出的頁面
+      routes: ["/"],
     },
+    compressPublicAssets: true,
+    minify: true,
+  },
+  // 實驗性功能優化
+  experimental: {
+    payloadExtraction: false,
   },
   app: {
     head: {
@@ -34,11 +41,7 @@ export default defineNuxtConfig({
         {
           name: "description",
           content:
-            "Frontend development, Vue, self-learning, focusing on AI, and data analysis exploration, supporting web design and career transition.",
-        },
-        {
-          name: "apple-mobile-web-app-status-bar-style",
-          content: "black-translucent",
+            "前端開發、Vue、Coding、自學、AI、資料分析探索，支援網頁設計與職涯轉職。",
         },
         {
           name: "theme-color",
@@ -52,10 +55,53 @@ export default defineNuxtConfig({
         },
         { name: "referrer", content: "no-referrer-when-downgrade" },
         { name: "author", content: "Mike Lin" },
-        { name: "keywords", content: "前端開發、Vue、Coding" },
-        { name: "application-name", content: "Mike" },
-        { name: "apple-mobile-web-app-title", content: "Mike" },
+        {
+          name: "keywords",
+          content:
+            "前端開發、Vue、Nuxt、JavaScript、TypeScript、Coding、自學、AI、資料分析、職涯轉職、網頁設計",
+        },
+        { name: "application-name", content: "Mike's Blog" },
+        { name: "apple-mobile-web-app-title", content: "Mike's Blog" },
         { name: "apple-mobile-web-app-status-bar-style", content: "default" },
+        { name: "apple-mobile-web-app-capable", content: "yes" },
+        { name: "mobile-web-app-capable", content: "yes" },
+        { name: "msapplication-TileColor", content: "#ffffff" },
+        { name: "format-detection", content: "telephone=no" },
+        // Open Graph
+        { property: "og:type", content: "website" },
+        { property: "og:site_name", content: "Mike's Blog" },
+        { property: "og:locale", content: "zh_TW" },
+        { property: "og:url", content: "https://zenzenlin.github.io/my-blog/" },
+        { property: "og:title", content: "zenzen 的部落格網站" },
+        {
+          property: "og:description",
+          content:
+            "前端開發、Vue、Coding、自學、AI、資料分析探索，支援網頁設計與職涯轉職。",
+        },
+        {
+          property: "og:image",
+          content: "https://zenzenlin.github.io/my-blog/og-image.png",
+        },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        {
+          property: "og:image:alt",
+          content: "Mike's Blog - 前端技術分享部落格",
+        },
+        // Twitter Cards
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:site", content: "@your_twitter" },
+        { name: "twitter:creator", content: "@your_twitter" },
+        { name: "twitter:title", content: "zenzen 的部落格網站" },
+        {
+          name: "twitter:description",
+          content:
+            "前端開發、Vue、Coding、自學、AI、資料分析探索，支援網頁設計與職涯轉職。",
+        },
+        {
+          name: "twitter:image",
+          content: "https://zenzenlin.github.io/my-blog/og-image.png",
+        },
       ],
     },
     baseURL: process.env.NODE_ENV === "production" ? "/my-blog/" : "/",
@@ -66,12 +112,18 @@ export default defineNuxtConfig({
     description:
       "前端開發、Vue、Coding、自學、AI、資料分析探索，支援網頁設計與職涯轉職。",
     image: "https://zenzenlin.github.io/my-blog/og-image.png",
+    defaultLocale: "zh-TW",
+  },
+  seo: {
+    fallbackTitle: false,
+    redirectToCanonicalSiteUrl: true,
   },
   sitemap: {
     xsl: false,
     sources: ["/api/_sitemap-urls"],
   },
   robots: {
+    robotsTxt: false,
     sitemap: "https://zenzenlin.github.io/my-blog/sitemap.xml",
   },
 });

@@ -1,2 +1,17 @@
 User-Agent: *
-Disallow:
+Allow: /
+
+# 網站地圖
+Sitemap: https://zenzenlin.github.io/my-blog/sitemap.xml
+
+# 阻擋不必要的頁面
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /*?*
+
+# 允許重要頁面
+Allow: /front-end/
+Allow: /ai/
+Allow: /back-end/
+Allow: /others/
+Allow: /pasocon/
