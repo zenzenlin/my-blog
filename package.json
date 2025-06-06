@@ -1,5 +1,5 @@
 {
-  "name": "zenzenlin  _blog",
+  "name": "zenzenlin_blog",
   "private": true,
   "type": "module",
   "description": "A Blog to record life",
@@ -16,11 +16,14 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "seo:check": "node scripts/seo-check.mjs",
+    "seo:validate": "nuxt build --analyze"
   },
   "dependencies": {
     "@nuxt/icon": "1.12.0",
     "@nuxtjs/robots": "^5.2.10",
+    "@nuxtjs/seo": "^3.0.3",
     "@nuxtjs/sitemap": "^7.3.0",
     "@unhead/vue": "^2.0.3",
     "nuxt": "^3.17.0",
