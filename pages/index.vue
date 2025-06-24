@@ -15,11 +15,10 @@ const appConfig = useAppConfig();
 
 // 首頁 SEO 設定
 useSEOMeta({
-  title: "Mike's Blog - 前端技術分享部落格",
-  description:
-    "前端開發、Vue、Coding、自學、AI、資料分析探索，支援網頁設計與職涯轉職。",
-  image: "https://zenzenlin.github.io/my-blog/og-image.png",
-  url: "https://zenzenlin.github.io/my-blog/",
+  title: "Mike's Blog",
+  description: "前端開發、Vue、Coding、自學、AI 探索，支援網頁設計與職涯轉職。",
+  image: "https://my-blog-taupe-one.vercel.app/my-blog/og-image.png",
+  url: "https://my-blog-taupe-one.vercel.app/my-blog/",
   type: "website",
 });
 
@@ -35,7 +34,7 @@ useHead({
       rel: "alternate",
       type: "application/rss+xml",
       title: "RSS Feed",
-      href: "https://zenzenlin.github.io/my-blog/rss.xml",
+      href: "https://my-blog-taupe-one.vercel.app/my-blog/rss.xml",
     },
   ],
 });

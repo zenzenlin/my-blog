@@ -68,7 +68,7 @@ const breadcrumbSchema = computed(() => {
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: `https://zenzenlin.github.io/my-blog${item.path}`,
+      item: `https://my-blog-taupe-one.vercel.app/my-blog${item.path}`,
     })),
   };
 });

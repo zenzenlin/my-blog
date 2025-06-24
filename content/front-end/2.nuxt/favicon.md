@@ -28,7 +28,7 @@ head: {
 
 - `type="image/svg+xml"`: 我的 favicon.ico 不是 svg 檔，應該不用這個設定
 - 快取問題: 瀏覽器強制清空快取，還是不行
-- 檔案路徑: 由於本地都沒問題，自然以為是沒打包進去，但檔案是有的，而且可以透過 https://zenzenlin.github.io/my-blog/favicon.ico 造訪到，不過透過 https://zenzenlin.github.io/favicon.ico 就是 404 了，因此問題極有可能出在這。GitHub Pages 將我的網站放在以 repo 為名的子路徑下，因此原本的設定等於去找 https://zenzenlin.github.io/favicon.ico 這個資源，自然找不到了，因此改成 `href: "./favicon.ico"` 表示在當前 HTML 檔案的相同目錄下尋找。
+- 檔案路徑: 由於本地都沒問題，自然以為是沒打包進去，但檔案是有的，而且可以透過 https://my-blog-taupe-one.vercel.app/my-blog/favicon.ico 造訪到，不過透過 https://my-blog-taupe-one.vercel.app/favicon.ico 就是 404 了，因此問題極有可能出在這。GitHub Pages 將我的網站放在以 repo 為名的子路徑下，因此原本的設定等於去找 https://my-blog-taupe-one.vercel.app/favicon.ico 這個資源，自然找不到了，因此改成 `href: "./favicon.ico"` 表示在當前 HTML 檔案的相同目錄下尋找。
 
 ## 參考
 

@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
       .limit(50)
       .find();
 
-    const baseUrl = "https://zenzenlin.github.io/my-blog";
+    const baseUrl = "https://my-blog-taupe-one.vercel.app/my-blog";
 
     const rssItems = articles
       .filter(
@@ -46,7 +46,7 @@ export default defineEventHandler(async (event) => {
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title><![CDATA[Mike's Blog]]></title>
-    <description><![CDATA[前端開發、Vue、Coding、自學、AI、資料分析探索，支援網頁設計與職涯轉職。]]></description>
+    <description><![CDATA[前端開發、Vue、Coding、自學、AI 探索，支援網頁設計與職涯轉職。]]></description>
     <link>${baseUrl}</link>
     <atom:link href="${baseUrl}/rss.xml" rel="self" type="application/rss+xml"/>
     <language>zh-tw</language>

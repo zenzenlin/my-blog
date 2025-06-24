@@ -15,19 +15,17 @@ interface SEOData {
 
 export const useSEOMeta = (data: SEOData) => {
   const route = useRoute();
-  const baseUrl = "https://zenzenlin.github.io/my-blog";
+  const baseUrl = "https://my-blog-taupe-one.vercel.app/my-blog";
 
   const seoTitle = computed(() => {
     if (!data.title) return "Mike's Blog";
-    return data.title === "Mike's Blog"
-      ? data.title
-      : `${data.title} | Mike's Blog`;
+    return data.title === "Mike's Blog" ? data.title : `${data.title}`;
   });
 
   const seoDescription = computed(
     () =>
       data.description ||
-      "前端開發、Vue、Coding、自學、AI、資料分析探索，支援網頁設計與職涯轉職。"
+      "前端開發、Vue、Coding、自學、AI 探索，支援網頁設計與職涯轉職。"
   );
 
   const seoImage = computed(() => data.image || `${baseUrl}/og-image.png`);
@@ -73,7 +71,7 @@ export const useSEOMeta = (data: SEOData) => {
 
 export const useArticleSEO = (article: any) => {
   const route = useRoute();
-  const baseUrl = "https://zenzenlin.github.io/my-blog";
+  const baseUrl = "https://my-blog-taupe-one.vercel.app/my-blog";
 
   const publishedTime = article.date || article.createdAt;
   const modifiedTime = article.updatedAt || article.date || article.createdAt;

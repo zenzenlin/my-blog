@@ -2,7 +2,7 @@ User-Agent: *
 Allow: /
 
 # 網站地圖
-Sitemap: https://zenzenlin.github.io/my-blog/sitemap.xml
+Sitemap: https://my-blog-taupe-one.vercel.app/my-blog/sitemap.xml
 
 # 阻擋不必要的頁面
 Disallow: /api/
