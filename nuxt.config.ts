@@ -30,83 +30,87 @@ export default defineNuxtConfig({
     payloadExtraction: false,
   },
   app: {
-    // head: {
-    //   htmlAttrs: {
-    //     lang: "zh-Hant-TW",
-    //   },
-    //   title: "Mike 的部落格網站",
-    //   link: [{ rel: "icon", type: "image/x-icon", href: "./favicon.ico" }],
-    //   meta: [
-    //     { name: "viewport", content: "width=device-width, initial-scale=1" },
-    //     {
-    //       name: "description",
-    //       content:
-    //         "前端開發、Vue、Coding、自學、AI 探索，支援網頁設計與職涯轉職。",
-    //     },
-    //     {
-    //       name: "theme-color",
-    //       media: "(prefers-color-scheme: light)",
-    //       content: "white",
-    //     },
-    //     {
-    //       name: "theme-color",
-    //       media: "(prefers-color-scheme: dark)",
-    //       content: "black",
-    //     },
-    //     { name: "referrer", content: "no-referrer-when-downgrade" },
-    //     { name: "author", content: "Mike Lin" },
-    //     {
-    //       name: "keywords",
-    //       content:
-    //         "前端開發、Vue、Nuxt、JavaScript、TypeScript、Coding、自學、AI、資料分析、職涯轉職、網頁設計",
-    //     },
-    //     { name: "application-name", content: "Mike's Blog" },
-    //     { name: "apple-mobile-web-app-title", content: "Mike's Blog" },
-    //     { name: "apple-mobile-web-app-status-bar-style", content: "default" },
-    //     { name: "apple-mobile-web-app-capable", content: "yes" },
-    //     { name: "mobile-web-app-capable", content: "yes" },
-    //     { name: "msapplication-TileColor", content: "#ffffff" },
-    //     { name: "format-detection", content: "telephone=no" },
-    //     // Open Graph
-    //     { property: "og:type", content: "website" },
-    //     { property: "og:site_name", content: "Mike's Blog" },
-    //     { property: "og:locale", content: "zh_TW" },
-    //     {
-    //       property: "og:url",
-    //       content: "https://my-blog-taupe-one.vercel.app/my-blog/",
-    //     },
-    //     { property: "og:title", content: "Mike 的部落格網站" },
-    //     {
-    //       property: "og:description",
-    //       content:
-    //         "前端開發、Vue、Coding、自學、AI 探索，支援網頁設計與職涯轉職。",
-    //     },
-    //     {
-    //       property: "og:image",
-    //       content: "https://my-blog-taupe-one.vercel.app/my-blog/og-image.png",
-    //     },
-    //     { property: "og:image:width", content: "1200" },
-    //     { property: "og:image:height", content: "630" },
-    //     {
-    //       property: "og:image:alt",
-    //       content: "Mike's Blog - 前端技術分享部落格",
-    //     },
-    //     // Twitter Cards
-    //     { name: "twitter:card", content: "summary_large_image" },
-    //     { name: "twitter:site", content: "@your_twitter" },
-    //     { name: "twitter:creator", content: "@your_twitter" },
-    //     { name: "twitter:title", content: "Mike 的部落格網站" },
-    //     {
-    //       name: "twitter:description",
-    //       content:
-    //         "前端開發、Vue、Coding、自學、AI 探索，支援網頁設計與職涯轉職。",
-    //     },
-    //     {
-    //       name: "twitter:image",
-    //       content: "https://my-blog-taupe-one.vercel.app/my-blog/og-image.png",
-    //     },
-    //   ],
-    // },
+    head: {
+      htmlAttrs: {
+        lang: "zh-Hant-TW",
+      },
+      title: "Mike 的部落格網站",
+      link: [{ rel: "icon", type: "image/x-icon", href: "./favicon.ico" }],
+      meta: [
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        {
+          name: "description",
+          content:
+            "前端開發、Vue、Coding、自學、AI 探索，支援網頁設計與職涯轉職。",
+        },
+        {
+          name: "theme-color",
+          media: "(prefers-color-scheme: light)",
+          content: "white",
+        },
+        {
+          name: "theme-color",
+          media: "(prefers-color-scheme: dark)",
+          content: "black",
+        },
+        { name: "referrer", content: "no-referrer-when-downgrade" },
+        { name: "author", content: "Mike Lin" },
+        {
+          name: "keywords",
+          content:
+            "前端開發、Vue、Nuxt、JavaScript、TypeScript、Coding、自學、AI、資料分析、職涯轉職、網頁設計",
+        },
+        { name: "application-name", content: "Mike's Blog" },
+        { name: "apple-mobile-web-app-title", content: "Mike's Blog" },
+        { name: "apple-mobile-web-app-status-bar-style", content: "default" },
+        { name: "apple-mobile-web-app-capable", content: "yes" },
+        { name: "mobile-web-app-capable", content: "yes" },
+        { name: "msapplication-TileColor", content: "#ffffff" },
+        { name: "format-detection", content: "telephone=no" },
+        // Open Graph
+        { property: "og:type", content: "website" },
+        { property: "og:site_name", content: "Mike's Blog" },
+        { property: "og:locale", content: "zh_TW" },
+        {
+          property: "og:url",
+          content: "https://my-blog-taupe-one.vercel.app/my-blog/",
+        },
+        { property: "og:title", content: "Mike 的部落格網站" },
+        {
+          property: "og:description",
+          content:
+            "前端開發、Vue、Coding、自學、AI 探索，支援網頁設計與職涯轉職。",
+        },
+        {
+          property: "og:image",
+          content: "https://my-blog-taupe-one.vercel.app/my-blog/og-image.png",
+        },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        {
+          property: "og:image:alt",
+          content: "Mike's Blog - 前端技術分享部落格",
+        },
+        // Twitter Cards
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:site", content: "@your_twitter" },
+        { name: "twitter:creator", content: "@your_twitter" },
+        { name: "twitter:title", content: "Mike 的部落格網站" },
+        {
+          name: "twitter:description",
+          content:
+            "前端開發、Vue、Coding、自學、AI 探索，支援網頁設計與職涯轉職。",
+        },
+        {
+          name: "twitter:image",
+          content: "https://my-blog-taupe-one.vercel.app/my-blog/og-image.png",
+        },
+        {
+          name: "google-site-verification",
+          content: "OOxVaTDzKP7XMC2mPCcrvwr8vTgvVRF76gPECnOmxlk",
+        },
+      ],
+    },
     baseURL: process.env.NODE_ENV === "production" ? "/my-blog/" : "/",
   },
   site: {
