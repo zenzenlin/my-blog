@@ -30,10 +30,10 @@
     >
       <div class="mx-auto w-full min-w-0">
         <!-- SEO 麵包屑 -->
-        <SEOBreadcrumb
+        <!-- <SEOBreadcrumb
           v-if="breadcrumbs.length > 0"
           :breadcrumbs="breadcrumbs"
-        />
+        /> -->
 
         <LayoutBreadcrumb
           v-if="
@@ -86,49 +86,14 @@ const { page } = useContent();
 const config = useConfig();
 const appConfig = useAppConfig();
 
-// 生成麵包屑
-const breadcrumbs = computed(() => {
-  if (!page.value?._path) return [];
-
-  const pathSegments = page.value._path.split("/").filter(Boolean);
-  const crumbs = [];
-
-  for (let i = 0; i < pathSegments.length; i++) {
-    const segment = pathSegments[i];
-    const path = "/" + pathSegments.slice(0, i + 1).join("/");
-
-    // 將路徑段落轉換為中文標題
-    let title = segment;
-    const titleMap: Record<string, string> = {
-      "front-end": "前端技術",
-      ai: "AI 相關",
-      "back-end": "後端技術",
-      others: "其他",
-      pasocon: "資訊安全",
-      vue: "Vue.js",
-      javascript: "JavaScript",
-      typescript: "TypeScript",
-      css: "CSS",
-      nuxt: "Nuxt.js",
-      nodejs: "Node.js",
-      vite: "Vite",
-      docker: "Docker",
-      coding: "程式設計",
-      reading: "閱讀心得",
-    };
-
-    if (titleMap[segment]) {
-      title = titleMap[segment];
-    }
-
-    crumbs.push({
-      text: title,
-      to: i === pathSegments.length - 1 ? undefined : path,
-    });
-  }
-
-  return crumbs;
-});
+// 暫時保留註解，驗證是否需要 SEO 麵包屑
+// useSeoMeta({
+//   title: `${page.value?.title ?? "404"} - ${config.value.site.name}`,
+//   ogTitle: page.value?.title,
+//   description: page.value?.description,
+//   ogDescription: page.value?.description,
+//   twitterCard: "summary_large_image",
+// });
 
 // SEO Meta 設定
 if (page.value) {
