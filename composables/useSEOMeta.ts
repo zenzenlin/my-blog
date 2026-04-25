@@ -47,8 +47,6 @@ export const useSEOMeta = (data: SEOData) => {
     twitterTitle: seoTitle.value,
     twitterDescription: seoDescription.value,
     twitterImage: seoImage.value,
-    twitterSite: "@your_twitter",
-    twitterCreator: "@your_twitter",
   });
 
   // 文章特定的 meta tags

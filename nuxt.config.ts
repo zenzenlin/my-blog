@@ -93,8 +93,6 @@ export default defineNuxtConfig({
         },
         // Twitter Cards
         { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:site", content: "@your_twitter" },
-        { name: "twitter:creator", content: "@your_twitter" },
         { name: "twitter:title", content: "Mike 的部落格網站" },
         {
           name: "twitter:description",
@@ -114,7 +112,7 @@ export default defineNuxtConfig({
     baseURL: process.env.NODE_ENV === "production" ? "/my-blog/" : "/",
   },
   site: {
-    url: "https://my-blog-taupe-one.vercel.app",
+    url: "https://my-blog-taupe-one.vercel.app/my-blog",
     name: "Mike's Blog",
     description:
       "前端開發、Vue、Coding、自學、AI 探索，支援網頁設計與職涯轉職。",
@@ -130,7 +128,6 @@ export default defineNuxtConfig({
     sources: ["/api/_sitemap-urls"],
   },
   robots: {
-    robotsTxt: false,
     sitemap: "https://my-blog-taupe-one.vercel.app/my-blog/sitemap.xml",
   },
 });
